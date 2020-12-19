@@ -1,0 +1,10 @@
+{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "marcelo",
+    "password": "santos0l1ve1ra",
+    "database": "weblog",
+    "entities": ["src/clientes/cliente.entity{.ts,.js}"],
+    "synchronize": true
+}

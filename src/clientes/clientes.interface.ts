@@ -1,4 +1,4 @@
-export interface Cliente {
+export interface ClienteDTO {
     email: string
     senha: string
 }
