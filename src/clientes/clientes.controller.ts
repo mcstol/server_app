@@ -1,4 +1,4 @@
-import {  Body, Controller, Delete, Get, HttpStatus, Param, Post, Put } from '@nestjs/common';
+import {  Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
 import { ClienteDTO } from './clientes.interface'
 import{ Cliente } from './cliente.entity'
 import { ClientesService } from './clientes.service'
@@ -14,24 +14,29 @@ export class ClientesController {
     }
 
     @Get(":id")
-     async getCliente(@Param('id') id: string): Promise<string> {
-        return id;
+     async getCliente(@Param('id') id: string): Promise<Cliente> {
+        return this.clientesService.getCliente(id);
     }
 
 
     @Post()
-    async createUsers(@Body() data: ClienteDTO) {
-      return  this.clientesService.create(data)
+    async createCliente(@Body() data: ClienteDTO) {
+      return  this.clientesService.createCliente(data)
     }
 
     @Put(":id")
-    async updateCliente(@Param('id') id:string): Promise<string>{
-      return id;
+    async updateCliente(@Param('id') id:string, @Body() data: ClienteDTO): Promise<Cliente>{
+      return this.clientesService.updateCliente(id, data)
+    }
+
+    @Patch(":id")
+    async updateDataCliente(@Param('id') id: string, @Body() data: ClienteDTO): Promise<Cliente>{
+      return this.clientesService.updateDataCliente(id, data)
     }
 
     @Delete(":id")
-    async deleteCliente(@Param('id') id:string): Promise<string>{
-      return id;
+    async deleteCliente(@Param('id') id:string): Promise<Cliente>{
+      return this.clientesService.deleteCliente(id);
     }
       
     
