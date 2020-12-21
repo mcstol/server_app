@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Cliente } from './clientes/cliente.entity';
 import { ClientesModule } from './clientes/clientes.module';
+import { EquipamentosModule } from './equipamentos/equipamentos.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -17,8 +18,8 @@ import { ClientesModule } from './clientes/clientes.module';
     entities: [Cliente],
     synchronize: true,
     
-  }),ClientesModule],
-  controllers: [AppController ],
+  }),ClientesModule, EquipamentosModule],
+  controllers: [AppController],
   providers: [AppService ],
 })
 export class AppModule {}
