@@ -1,4 +1,8 @@
-import { Entity } from "typeorm";
+// import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity()
-export class Equipamento {}
+// @Entity()
+// export class Equipamento {
+//     @PrimaryGeneratedColumn
+
+
+// }
