@@ -1,22 +1,23 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
 // import { Equipamento } from './equipamentos.entity';
-// import { EquipamentosService } from './equipamentos.service';
+import { EquipamentosService } from './equipamentos.service';
 
 
 @Controller('equipamentos')
 export class EquipamentosController {
-    // constructor (private equipamentoService:EquipamentosService){}
+    constructor (private equipamentoService:EquipamentosService){}
 
 
     @Get()
     async listAllEquipamentos(): Promise<string>{
-        const msg = 'Listou equipamentos'
-        return msg
+        return this.equipamentoService.listAllEquipamentos()
+        // const msg = 'Listou equipamentos'
+        // return msg
         }
 
     @Get(':id')
     async getCliente(@Param('id') id: string): Promise<string>{
-        return id
+        return this.equipamentoService.getCliente(id)
     }
 
     @Post()
@@ -26,8 +27,19 @@ export class EquipamentosController {
     }
 
     @Put(':id')
-    async updateCliente(@Param('id') id: string, @Body() data:string){
-        return data;
+    async updateEquipamento(@Param('id') id: string, @Body() data:string){
+        return {id,data};
     } 
+
+    @Patch(':id')
+    async  upadateDataEquipamento(@Param('id') id: string, @Body() data: string){
+        return {id, data}
+    }
+
+    @Delete(':id')
+    async deleteEquipamento(@Param('id') id:string){
+        const msg = 'Apagou registro'
+        return {id,msg}
+    }
 
 }

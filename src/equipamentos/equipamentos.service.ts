@@ -5,6 +5,15 @@
 
 
 // @Injectable()
-// export class EquipamentosService {
+export class EquipamentosService {
 //     constructor(@InjectRepository(Equipamento) private equipamentosRepository: Repository <Equipamento>,) { }
-// }
+
+    async listAllEquipamentos(): Promise<string>{
+        const msg = 'Listou equipamentos'
+        return msg
+    }
+
+    async getCliente(id: string): Promise<string>{
+        return id
+    }
+}
