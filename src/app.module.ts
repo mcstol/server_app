@@ -13,7 +13,7 @@ import { EquipamentosModule } from './equipamentos/equipamentos.module';
     host: 'localhost',
     port: 3306,
     username: 'marcelo',
-    password: 'santos0l1ve1ra',
+    password: 's@ntos0L1ve1ra',
     database: 'weblog',
     entities: [Cliente],
     synchronize: true,
