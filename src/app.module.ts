@@ -17,7 +17,7 @@ import { EquipamentosModule } from './equipamentos/equipamentos.module';
     database: 'weblog',
     entities: [Cliente],
     synchronize: true,
-    
+
   }),ClientesModule, EquipamentosModule],
   controllers: [AppController],
   providers: [AppService ],
